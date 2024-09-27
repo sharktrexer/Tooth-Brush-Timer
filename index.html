@@ -5,14 +5,23 @@
         <title>Tooth Brush Timer</title>
         <link rel="stylesheet" type="text/css" href="tbt.css" />
         <!-- Icon from https://www.flaticon.com/free-icons/toothbrush --> 
-        <link rel="shortcut icon" type="image/png" href="toothbrush.ico"/>   
-        <script src="tbt.js"></script>  
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
-            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
-            crossorigin="anonymous"></script> 
+        <link rel="shortcut icon" type="image/png" href="toothbrush.ico"/>        
     </head>
     <body>
+        <div class="container"> <!-- Flex Container-->
 
+            <div class="box">
+                <span id="timer">Timer Here</span>
+            </div>
+            <div class="box">
+                <span>Time Remaining</span>
+            </div>
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
+            crossorigin="anonymous"></script>   
+        <script src="tbt.js"></script>  
     </body>
     <footer>
         <p>By Ibrahim Sydock | 2024</p>
