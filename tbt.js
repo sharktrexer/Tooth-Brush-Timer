@@ -10,4 +10,10 @@ secs = (secs < 0 ? "0" : "") + secs;
 
 var time = hrs + ":" + mins + ":" + secs;
 
-$('#timer').text(time);
+$('#clock').text(time);
+
+setInterval(function() {
+    $('#timer').text(
+        Math.round(
+        (new Date() - curTime) / 1000, 0) + " Seconds");
+}, 1000)
