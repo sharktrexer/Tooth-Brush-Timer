@@ -1,0 +1,19 @@
+On Load:
+    intiliaze vars
+    Nothing right now
+
+button Start 
+    timerStart() func call
+        this includes timer counter logic, setinterval, formatTimer to '0:00'
+
+button Reset
+    resets timerRuntime var
+
+
+checkTimer()
+    does certain things when timer is at certain # seconds left
+    Every 30 seconds:
+        play sound? a calm alarm, like modern school bell
+        play text to speech? possibly inspirational?
+        fade in & out an image, inspirational or dental
+    & perhaps it all can be customizable? ^
