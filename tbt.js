@@ -20,7 +20,7 @@ function timer() {
 
 // formates to "0:00"
 function formatTimer(time) {
-    var mins = Math.round(time/60);
+    var mins = Math.floor(time/60);
     var sec = time % 60;
     sec = sec < 10 ? "0" + sec : sec;
     return mins + ":" + sec;
