@@ -1,4 +1,4 @@
-// Get local time
+// Get local time (TODO: have it be resetable)
 var curTime = new Date();
 
 var timerRuntimeMin = 2;
@@ -7,7 +7,8 @@ var secondsElapsed = timerRuntimeSec + 1;
 
 var id = null;
 
-function startTimer() {
+// Counts down, stopping interval once finished
+function timer() {
     if(secondsElapsed <= 0) {
         clearInterval(id)
     }
@@ -17,6 +18,7 @@ function startTimer() {
     return secondsElapsed
 }
 
+// formates to "0:00"
 function formatTimer(time) {
     var mins = Math.round(time/60);
     var sec = time % 60;
@@ -25,8 +27,9 @@ function formatTimer(time) {
     
 }
 
+// Update timer every second
 id = setInterval(function() {
     $('#timer').text(
-        formatTimer(startTimer()) + " Seconds");
+        formatTimer(timer()));
 }, 1000)
 
