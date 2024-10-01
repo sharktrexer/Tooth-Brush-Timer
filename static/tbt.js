@@ -16,13 +16,10 @@ var id = null;
 
 // Counts down, stopping interval once finished
 function timer() {
-    if(pause) {
-        return secondsElapsed;
-    }
     if(secondsElapsed <= 0) {
         clearInterval(id)
     }
-    else {
+    else if (!pause) {
         secondsElapsed--; 
     }
     if(secondsElapsed % quarterTime == 0) {
