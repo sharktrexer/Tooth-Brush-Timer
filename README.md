@@ -9,7 +9,8 @@ Click the link underneath this repo's description, or click __[here](https://sha
 ### For Developers
 Either:
 - Download all the files from this repo and play around with the code!
-- Using [Git](https://git-scm.com/downloads), create an empty folder and use the command
+- Using [Git](https://git-scm.com/downloads), create an empty folder and use the command:
+  
   `git clone https://github.com/sharktrexer/Tooth-Brush-Timer`
 
 # Examples
