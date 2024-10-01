@@ -22,20 +22,19 @@ function formatTimer(time) {
     var mins = Math.floor(time/60);
     var sec = time % 60;
     sec = sec < 10 ? "0" + sec : sec;
-    return mins + ":" + sec;
+    $('#timer').text(mins + ":" + sec);
     
 }
 
 // Update timer every second
 function startTimer() {
     id = setInterval(function() {
-        $('#timer').text(
-            formatTimer(timer()));
+            formatTimer(timer());
     }, 1000)
 }
 
 function resetTimer() {
-    secondsElapsed = timerRuntimeSec + 1;
+    secondsElapsed = timerRuntimeSec;
     formatTimer(secondsElapsed);
     if(id)
         clearInterval(id)
