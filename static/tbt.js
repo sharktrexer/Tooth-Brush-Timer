@@ -11,6 +11,7 @@ bellSound.onended = function() {
     pause = false;
 }
 const completedSound = new Audio('static/celebration.wav');
+const tickSound = new Audio('static/tick.wav');
 
 // Id to clear interval function
 var id = null;
@@ -22,6 +23,7 @@ function timer() {
         clearInterval(id);
     }
     else if (!pause) {
+        tickSound.play(); // TODO: make a sound play function. don't play tick if other sound is played.
         countdown--; 
     }
     if(countdown % quarterTime == 0 && !(countdown <= 0)) {
@@ -40,6 +42,7 @@ function formatTimer(time) {
 
 // Update timer every second
 function startTimer() {
+    resetTimer();
     id = setInterval(function() {
             formatTimer(timer());
     }, 1000)
