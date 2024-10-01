@@ -1,8 +1,8 @@
 // Time vars
 var timerRuntimeMin = 2;
 var timerRuntimeSec = timerRuntimeMin * 60;
-var secondsElapsed = 20;
-var quarterTime = secondsElapsed / 4;
+var countdown = timerRuntimeSec;
+var quarterTime = countdown / 4;
 
 var pause = false;
 
@@ -16,16 +16,16 @@ var id = null;
 
 // Counts down, stopping interval once finished
 function timer() {
-    if(secondsElapsed <= 0) {
+    if(countdown <= 0) {
         clearInterval(id)
     }
     else if (!pause) {
-        secondsElapsed--; 
+        countdown--; 
     }
-    if(secondsElapsed % quarterTime == 0) {
+    if(countdown % quarterTime == 0) {
         quarterOfTimeEvent();
     }
-    return secondsElapsed
+    return countdown
 }
 
 // formats to "0:00"
@@ -45,8 +45,8 @@ function startTimer() {
 }
 
 function resetTimer() {
-    secondsElapsed = timerRuntimeSec;
-    formatTimer(secondsElapsed);
+    countdown = timerRuntimeSec;
+    formatTimer(countdown);
     if(id)
         clearInterval(id)
 }
