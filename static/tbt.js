@@ -6,10 +6,11 @@ var quarterTime = countdown / 4;
 
 var pause = false;
 
-var bellSound = new Audio('static/bell.wav');
+const bellSound = new Audio('static/bell.wav');
 bellSound.onended = function() {
     pause = false;
 }
+const completedSound = new Audio('static/celebration.wav');
 
 // Id to clear interval function
 var id = null;
@@ -17,12 +18,13 @@ var id = null;
 // Counts down, stopping interval once finished
 function timer() {
     if(countdown <= 0) {
-        clearInterval(id)
+        completedSound.play();
+        clearInterval(id);
     }
     else if (!pause) {
         countdown--; 
     }
-    if(countdown % quarterTime == 0) {
+    if(countdown % quarterTime == 0 && !(countdown <= 0)) {
         quarterOfTimeEvent();
     }
     return countdown
@@ -30,11 +32,10 @@ function timer() {
 
 // formats to "0:00"
 function formatTimer(time) {
-    var mins = Math.floor(time/60);
+    const mins = Math.floor(time/60);
     var sec = time % 60;
     sec = sec < 10 ? "0" + sec : sec;
     $('#timer').text(mins + ":" + sec);
-    
 }
 
 // Update timer every second
