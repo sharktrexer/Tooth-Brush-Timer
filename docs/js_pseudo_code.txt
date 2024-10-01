@@ -9,7 +9,6 @@ button Start
 button Reset
     resets timerRuntime var
 
-
 checkTimer()
     does certain things when timer is at certain # seconds left
     Every 30 seconds:
