@@ -8,14 +8,17 @@
         <link rel="shortcut icon" type="image/png" href="static/toothbrush.ico"/>        
     </head>
     <body>
+
+        <button id="theme-toggle">Toggle Light/Dark Mode</button>
+
         <div class="container"> <!-- Flex Container-->
 
             <div class="box">
                 <span id="timer" class="timer-text">2:00</span>
             </div>
             <div class="box">
-                <button onclick="startTimer()">Start Timer</button>
-                <button onclick="resetTimer()">Reset </button>
+                <button id="start">Start Timer</button>
+                <button id="reset">Reset </button>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 

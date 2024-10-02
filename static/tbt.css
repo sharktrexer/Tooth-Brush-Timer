@@ -1,12 +1,29 @@
+:root {
+    --dark: black;
+    --light: white;
+    --ft-light: grey;
+    --ft-dark: lightgrey;
+}
+
 footer {
     position: fixed;
 	bottom: 0;
     font-size: 15px;
-    color: grey;
+    color: var(--ft-light);
 }
 
 body {
     height: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.dark-mode {
+    --dark: white;
+    --light: black;
+    --ft-light: lightgrey;
+    --ft-dark: grey;
 }
 
 .container {
