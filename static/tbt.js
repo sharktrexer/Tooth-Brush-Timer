@@ -14,21 +14,22 @@ const startBtn = $('#start');
 const resetBtn = $('#reset');
 const themeToggleBtn = $('#theme-toggle');
 
+// Sounds
+// TODO: make a sound play function. don't play tick if other sound is played.
+const bellSound = new Audio('static/bell.wav');
+const completedSound = new Audio('static/celebration.wav');
+const tickSound = new Audio('static/tick.wav');
+
 // Stored State
 const theme = localStorage.getItem('theme');
 
 // Mounting theme with short circuit if there is one
 theme && $('body').addClass(theme);
 
-// Sounds
-const bellSound = new Audio('static/bell.wav');
+// Assign events
 bellSound.onended = function() {
     pause = false;
 }
-const completedSound = new Audio('static/celebration.wav');
-const tickSound = new Audio('static/tick.wav');
-
-// Assign button functions
 startBtn.click(function(){
     startTimer();
 }); 
@@ -58,13 +59,13 @@ function timer() {
         clearInterval(id);
     }
     else if (!pause) {
-        tickSound.play(); // TODO: make a sound play function. don't play tick if other sound is played.
+        tickSound.play(); 
         countdown--; 
     }
     if(countdown % quarterTime == 0 && !(countdown <= 0)) {
         quarterOfTimeEvent();
     }
-    return countdown
+    formatTimer(countdown);
 }
 
 // formats to "0:00"
@@ -75,11 +76,13 @@ function formatTimer(time) {
     timerText.text(mins + ":" + sec);
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 // Update timer every second
 function startTimer() {
     resetTimer();
     id = setInterval(function() {
-            formatTimer(timer());
+            timer();
     }, 1000)
 }
 
