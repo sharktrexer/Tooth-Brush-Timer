@@ -20,12 +20,6 @@ const bellSound = new Audio('static/bell.wav');
 const completedSound = new Audio('static/celebration.wav');
 const tickSound = new Audio('static/tick.wav');
 
-// Stored State
-const theme = localStorage.getItem('theme');
-
-// Mounting theme with short circuit if there is one
-theme && $('body').addClass(theme);
-
 // Assign events
 bellSound.onended = function() {
     pause = false;
@@ -40,11 +34,13 @@ themeToggleBtn.click(function(){
     toggleTheme();
 }); 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 /*Changes css theme from dark to light
     Uses local storage to remember theme on refresh */
 function toggleTheme() {
-    $("body").toggleClass("dark-mode");
-    if ($("body").hasClass('dark-mode')) {
+    $("html").toggleClass("dark-mode");
+    if ($("html").hasClass('dark-mode')) {
         localStorage.setItem('theme', 'dark-mode');
     } 
     else {
@@ -75,8 +71,6 @@ function formatTimer(time) {
     sec = sec < 10 ? "0" + sec : sec;
     timerText.text(mins + ":" + sec);
 }
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 // Update timer every second
 function startTimer() {

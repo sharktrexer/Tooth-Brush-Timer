@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>
+            /* Theme logic here to prevent update on refresh*/
+            // Stored State
+            const theme = localStorage.getItem('theme');
+            // Mounting theme with short circuit if there is one
+            theme && document.getElementsByTagName( 'html' )[0].classList.add(theme);
+            // Setting theme
+            localStorage.setItem('theme', theme);
+        </script>
         <meta charset="utf-8" />
         <title>Tooth Brush Timer</title>
         <link rel="stylesheet" type="text/css" href="static/tbt.css" />
@@ -21,6 +30,7 @@
                 <button id="reset">Reset </button>
             </div>
         </div>
+        
         <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
             crossorigin="anonymous"></script>   
