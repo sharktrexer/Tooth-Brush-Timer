@@ -18,7 +18,7 @@ const themeToggleBtn = $('#theme-toggle');
 // TODO: make a sound play function. don't play tick if other sound is played.
 const bellSound = new Audio('static/bell.wav');
 const completedSound = new Audio('static/celebration.wav');
-const tickSound = new Audio('static/tick.wav');
+const tickSound = new Audio('static/soft_tick.wav');
 
 // Assign events
 bellSound.onended = function() {
