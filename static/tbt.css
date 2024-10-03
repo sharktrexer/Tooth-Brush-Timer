@@ -28,10 +28,24 @@ button {
     padding: .25em .25em;
     margin-right: .5em;
     margin-left: .5em;
+    transition: .25s;
 }
-
 button:hover {
     transform: scale(1.1);
+}
+/* Creating bigger buttons on smaller screens 
+ Disabling hover effect since using touch screen doesn't auto lose focus*/
+@media screen and (min-width: 600) {
+    button, button:hover {
+        width: 200px; height: 50px; 
+        transform: scale(1) !important;
+    }      
+  }
+@media screen and (max-width: 1400px) {
+    button, button:hover {
+        width: 200px; height: 60px;  
+        transform: scale(1) !important;
+    }
 }
 
 .dark-mode {
