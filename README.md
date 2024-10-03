@@ -1,5 +1,5 @@
 # Teeth Brushing Timer
-A basic static webpage developed with Javascript & jQuery that helps you brush your teeth for the recomended 2 minutes! 
+A basic static webpage developed with Javascript & jQuery that helps you brush your teeth for the recommended 2 minutes! 
 Every 30 seconds the timer will pause and you will be notified with a pleasant sound that it is time to brush the next quadrant of your teeth. 
 
 I got this idea when I first used an electric toothbrush. I didn't like the brush itself, but it paused every 30 seconds to let you know that you should move onto the next part of your mouth.
@@ -17,9 +17,6 @@ Either:
 
 ### Additional Features
 Toggle between light and dark mode for brushing in the morning or evening!
-
-# Examples
-TBD
 
 # Attributions
 Site icon from [Flaticon](https://www.flaticon.com/free-icons/toothbrush)
