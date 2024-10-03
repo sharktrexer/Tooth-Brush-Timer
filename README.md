@@ -16,7 +16,8 @@ Either:
   `git clone https://github.com/sharktrexer/Tooth-Brush-Timer`
 
 ### Additional Features
-Toggle between light and dark mode for brushing in the morning or evening!
+- Toggle between light and dark mode for brushing in the morning or evening!
+- Can be used on mobile devices!
 
 # Attributions
 Site icon from [Flaticon](https://www.flaticon.com/free-icons/toothbrush)
