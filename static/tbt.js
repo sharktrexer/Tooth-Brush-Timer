@@ -11,6 +11,7 @@ var id = null;
 
 // Selectors
 const timerText = $('#timer');
+const remindText = $('#reminder');
 const startBtn = $('#start');
 const resetBtn = $('#reset');
 const themeToggleBtn = $('#theme-toggle');
@@ -55,14 +56,20 @@ function toggleTheme() {
 
 // Counts down, stopping interval once finished
 function timer() {
+    // Completion
     if(countdown <= 0) {
         completedSound.play();
         clearInterval(id);
+        remindText.text("Don't forget to brush your tongue!");
+        timerText.text(":)");
+        return;
     }
+    // Counting down
     else if (!pause) {
         if(doTickSound) tickSound.play(); 
         countdown--; 
     }
+    // Notification of time interval
     if(countdown % quarterTime == 0 && !(countdown <= 0)) {
         quarterOfTimeEvent();
     }
@@ -86,8 +93,9 @@ function startTimer() {
 }
 
 function resetTimer() {
-    countdown = timerRuntimeSec;
+    countdown = 1;
     formatTimer(countdown);
+    remindText.text("\u00a0");
     if(id)
         clearInterval(id)
 }

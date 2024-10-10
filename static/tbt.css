@@ -28,6 +28,7 @@ button {
     padding: .25em .25em;
     margin-right: .5em;
     margin-left: .5em;
+    margin-top: 2em;
     transition: .25s;
 }
 button:hover {
@@ -65,12 +66,15 @@ button:hover {
 }
 
 .box {
-    margin: 5px;
     text-align: center;     
 }
 
 .timer-text {  
     font-size: 10em;
+}
+
+.remind-text {  
+    font-size: 1.5em;
 }
 
 .top {
