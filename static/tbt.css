@@ -68,7 +68,12 @@ button:hover {
     margin: 5px;
     text-align: center;     
 }
-/* TODO: have it be responsive to device screen size*/
+
 .timer-text {  
     font-size: 10em;
+}
+
+.top {
+    display: flex; 
+    justify-content: space-between;
 }

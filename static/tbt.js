@@ -4,6 +4,7 @@ const timerRuntimeSec = timerRuntimeMin * 60;
 var countdown = timerRuntimeSec;
 var quarterTime = Math.round(countdown / 4);
 var pause = false;
+var doTickSound = true;
 
 // Id to clear interval function
 var id = null;
@@ -13,6 +14,7 @@ const timerText = $('#timer');
 const startBtn = $('#start');
 const resetBtn = $('#reset');
 const themeToggleBtn = $('#theme-toggle');
+const tickToggleBtn = $('#tick-toggle');
 
 // Sounds
 // TODO: make a sound play function. don't play tick if other sound is played.
@@ -32,6 +34,9 @@ resetBtn.click(function(){
 }); 
 themeToggleBtn.click(function(){
     toggleTheme();
+}); 
+tickToggleBtn.click(function(){
+    doTickSound = !doTickSound;
 }); 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~Functions~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -55,7 +60,7 @@ function timer() {
         clearInterval(id);
     }
     else if (!pause) {
-        tickSound.play(); 
+        if(doTickSound) tickSound.play(); 
         countdown--; 
     }
     if(countdown % quarterTime == 0 && !(countdown <= 0)) {
