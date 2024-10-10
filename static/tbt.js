@@ -93,7 +93,7 @@ function startTimer() {
 }
 
 function resetTimer() {
-    countdown = 1;
+    countdown = timerRuntimeSec;
     formatTimer(countdown);
     remindText.text("\u00a0");
     if(id)
